@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1c2b3a;
+    color: #fff;
+    padding: 0 20px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    margin: 0;
+    padding-top: 0;
+}
+
+.logo_empresa {
+    display: flex;
+    align-items: center;
+}
+
+.logo_empresa img {
+    max-height: 120px;
+    width: auto;
+}
+
+.titulo-header {
+    font-size: 2rem;
+    color: #fff;
+    margin-left: 20px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.menu-bar {
+    background-color: #1c2b3a;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.menu-bar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.menu-bar ul li {
+    margin-right: 20px;
+}
+
+.menu-bar .btn {
+    background-color: #357ABD;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.menu-bar .btn:hover {
+    background-color: #4a90e2;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: 150px;
+}
+
+.menu-lateral {
+    width: 250px;
+    background-color: #1c2b3a;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.menu-lateral nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral nav ul li {
+    margin: 20px 0;
+}
+
+.menu-lateral nav ul li a {
+    color: #b3c7e6;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-lateral nav ul li a:hover {
+    background-color: #357ABD;
+}
+
+.menu-lateral nav ul li a i {
+    margin-right: 10px;
+}
+
+main {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #181d23;
+    flex-grow: 1;
+    min-height: 80%;
+    margin-top: 0;
+    padding-top: 50px;
+}

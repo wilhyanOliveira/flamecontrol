@@ -1,0 +1,151 @@
+.buttons, .buttons_clie
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 750px;           
+    margin-bottom: 20px;
+}
+.buttons button
+{
+    border-radius: 5px;
+    margin: 5px;
+    width: 35%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;
+}
+.buttons_clie button
+{
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 35%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;  
+}
+
+
+/* -----------------------------Teleas menores--------------------------------*/
+
+.buttons_setor
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 600px;           
+    margin-bottom: 10px;
+    gap: 100px;
+}
+
+.buttons_setor button
+{
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: none;
+    width: 50%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;  
+}
+
+/* STATUS*/
+.buttons_status
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 600px;           
+    margin-bottom: 5px;
+    gap: 100px;
+}
+
+.buttons_status button
+{
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: none;
+    width: 50%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;  
+}
+
+/* MOTIVO*/
+
+.buttons_motivo
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 600px;           
+    margin-bottom: 5px;
+    gap: 100px;
+}
+
+.buttons_motivo button
+{
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: none;
+    width: 50%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;  
+}
+
+/*EQUIPE*/
+
+.buttons_equipe
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 600px;           
+    margin-bottom: 5px;
+    gap: 100px;
+}
+
+.buttons_equipe button
+{
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: none;
+    width: 50%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;  
+}
+
+/*TIPO DE ATENDIMENTO*/
+
+.buttons_tipo
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 600px;           
+    margin-bottom: 5px;
+    gap: 100px;
+}
+
+.buttons_tipo button
+{
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: none;
+    width: 50%;           
+    padding: 10px;
+    background-color:rgb(24, 48, 231) ; 
+    outline: none;
+    color: white;
+    font-weight: bold;  
+}
+
+/**/

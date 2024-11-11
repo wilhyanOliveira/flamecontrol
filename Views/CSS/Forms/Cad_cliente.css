@@ -1,0 +1,128 @@
+dialog::backdrop
+{
+    background-color:rgba(0, 0, 0, 0.505) ;
+}
+
+dialog
+{
+    width: 840px;
+    height: 670px;
+    background:rgb(1, 0, 32);
+    border: 2px solid #cacaca;
+    border-radius: 10px;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.container_cadastro {
+    max-width: 760px; 
+    margin: 7px;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.descricoes {
+    display: flex;
+    flex-direction: column; 
+}
+
+label {
+    color: white;
+    margin-bottom: 5px; 
+    font-weight: bold;
+    font-size: 12px;
+    margin: 5px;
+}
+
+input { 
+    padding: 5px;
+    margin: 10px 0; 
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+.razao {
+    max-width: 730px;
+    border: #cacaca;
+    display: inline;
+}
+
+.razao input {
+    width: 100%;
+}
+
+.endereco {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+    max-width: 750px;
+}
+
+.minicipio {
+    display: flex;
+}
+
+#cep {
+    width: 20%;
+    margin-right: 10px; /* Espaço à direita */
+}
+
+#municipio {
+    width: 80%;
+}
+
+.rua {
+    display: flex;
+}
+
+#rua {
+    width: 80%;
+    margin-right: 10px; 
+}
+
+#numero {
+    width: 20%;
+    margin-right: none;
+}
+
+.bairo input {
+    width: 100%; 
+}
+
+.referencia {
+    width: 100%; 
+}
+
+.referencia input {
+    width: 100%;
+}
+
+/*contato*/
+.contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;  
+    align-items: center;  
+    justify-content: center;
+}
+
+.fone_cel
+{
+    display: flex;
+    flex-direction: row;
+}
+.fone_cel, .telefone
+{
+    margin-right: 40px;
+}
+
+.fone_cel, .tel_celular
+{
+    margin-right: 50px;
+}
+
+#email {
+    width: 100%; 
+}

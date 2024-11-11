@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, rgb(1, 0, 32), rgb(2, 52, 201));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+.container
+{
+    width: 420px;
+    background:rgb(1, 0, 32);
+    border: 2px solid #cacaca;
+    border-radius: 10px;
+    padding: 30px 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1
+{
+    font-size: 36px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.input-login
+{
+   position: relative;
+   width: 100%;
+   height: 50px;
+   margin: 30px 0; 
+}
+.input-senha
+{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;   
+}
+.input-login input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #cacaca;
+    outline: none;
+    border-radius: 10px ;
+    font-size:16px;
+    color: #fff;
+    padding: 20px 20px 20px 20px;
+}
+.input-login input::placeholder
+{
+    color:#fff
+}
+.input-senha input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #cacaca;
+    outline: none;
+    border-radius: 10px ;
+    font-size:16px;
+    color: #fff;
+    padding: 20px 20px 20px 20px;
+}
+.input-senha input::placeholder
+{
+    color: #fff;
+}
+.button-entrar
+{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 4, 118);
+    border: 1px solid rgb(198, 195, 195 );
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor:pointer;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+}
+.button-entrar:hover
+{
+background-color: rgb(0, 0, 170);
+}
