@@ -5,38 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/atendimento.css">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/Cad_atendimento.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/buttons/buttons_news.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/buttons/button_cadastro.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/buttons/buttons_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/buttons/button_cadastro.css">
     <script src="../JS/popup.js" defer></script>
     <title>Atendimento</title>
 </head>
 <body>
 <header> 
-        <div class="logo_empresa" >
+        <div class="logo_empresa">
             <img src="/../flamecontrol/Views/IMG/logo_control_100.png" alt="logo">
         </div>
-    <nav>
-        <a href="Home_clie.php">Home</a>
-    </nav>
 
-</header>
+            <h1 class="titulo-header">Central de Atendimentos</h1> 
+    </header>
 
-<aside></aside>
-
- <main>
     <div class="container">
-        <div class="grid_atendimentos">
-            
-        </div>
+        
+        <aside class="menu-lateral">
+            <nav> 
+                <div>
+                    <div class = "button_new">
+                        <button class="btn" id="new_atendimento"><b> Novo Atendimento</b></button>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+  
     </div>
- </main>
- <aside class="dir">
-    <div>
-        <div class = "button_new">
-            <button class="btn" id="new_atendimento"><b> Novo Atendimento</b></button>
-        </div>
-    </div>
- </aside>
 
     <dialog>
         <div class="container_cadastro">

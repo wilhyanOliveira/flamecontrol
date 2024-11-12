@@ -2,18 +2,16 @@
 {
     align-items: center;
     display: flex;
-    border-radius: 10px;
     border: none;
 }
 .btn
 {
-    cursor: pointer;
-    background: rgb(0, 30, 255);
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
+    background-color: #357ABD;
+    margin: 5px;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    width: 240px;
-    font-size: 16pt;
-    color: white;  
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
 }
