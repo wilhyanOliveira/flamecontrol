@@ -331,3 +331,4 @@ function cadastro_equipe_atend()
     }
 
 }
+
