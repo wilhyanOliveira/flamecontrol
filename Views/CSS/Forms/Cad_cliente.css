@@ -1,19 +1,3 @@
-dialog::backdrop
-{
-    background-color:rgba(0, 0, 0, 0.505) ;
-}
-
-dialog
-{
-    width: 840px;
-    height: 670px;
-    background:rgb(1, 0, 32);
-    border: 2px solid #cacaca;
-    border-radius: 10px;
-    padding: 10px 10px;
-    position: relative;
-}
-
 .container_cadastro {
     max-width: 760px; 
     margin: 7px;

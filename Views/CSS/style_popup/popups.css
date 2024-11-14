@@ -1,0 +1,33 @@
+dialog::backdrop
+{
+    background-color:rgba(0, 0, 0, 0.505) ;
+}
+
+dialog
+{
+    width: 830px;
+    height: 670px;
+    background:rgb(38, 65, 92);
+    border: 2px solid #cacaca;
+    border-radius: 10px;
+    padding: 10px 10px;
+    position: relative;
+}
+
+dialog select
+{
+    display: flex;
+    flex-direction: column; 
+    border: 2px solid #cacaca; 
+    border-radius: 2px; 
+    border: none; 
+    outline: none;
+    padding: 5px; 
+    margin: 10px;
+}
+
+h1
+{
+    color: rgb(255, 255, 255);
+}
+
