@@ -33,7 +33,6 @@ $tipo_user = buscarTipoUser($conexao);
     <nav class="menu-bar">
         <div class="crud_button">
             <button class="btn" id="new_tipo_funci">Novo Acesso</button>
-            <button class="btn">Editar </button></li>
         </div>
     </nav>
 

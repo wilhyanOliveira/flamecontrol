@@ -24,6 +24,9 @@
         <aside class="menu-lateral">
             <nav> 
                 <div>
+                    <div class = "seleção de dados">
+
+                    </div>
                     <div class = "button_new">
                         <button class="btn" id="new_atendimento"><b> Novo Atendimento</b></button>
                     </div>

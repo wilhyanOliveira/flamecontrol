@@ -84,7 +84,7 @@
     <aside>
     <div>
         <div class = "button_status">
-            <button class="btn" id="new_setor"><b> Novo Status</b></button>
+            <button class="btn" id="new_status"><b> Novo Status</b></button>
         </div>
     </div>
     </aside>

@@ -96,20 +96,20 @@
 
             <form action="novo_equipe" method="post">
 
-                <div class="novo_equipe">
-                    <div class="descri_equipe">
+                <div class="novo_setor">
+                    <div class="descri_setor">
                         <label for="descricao">Descricao</label>
                         <input type="text" placeholder="Descrição" id="descricao">
                     </div>
-                    <div class="status_equipe">
-                        <label for="status_equipe">Ativo</label>
+                    <div class="status_setor">
+                        <label for="status_setor">Ativo</label>
                         <input type="checkbox" id="status_equipe">
                     </div>
                 </div>
     
                 <div class="buttons_equipe">
-                    <button class="cancelar" id="cancela_equipe"> CANCELAR</button>
-                    <button class="salvar" id="salvar_equipe"> SALVAR</button>
+                    <button class="cancelar" id="cancela_setor"> CANCELAR</button>
+                    <button class="salvar" id="salvar_setor"> SALVAR</button>
                 </div>
     
             </form>

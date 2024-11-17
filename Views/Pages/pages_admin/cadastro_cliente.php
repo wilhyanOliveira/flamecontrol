@@ -34,8 +34,7 @@ $clientes = buscarClientes($conexao);
 
     <nav class="menu-bar">
         <div class="crud_button">
-            <button class="btn" id="new_cliente">Novo Cliente</button>
-            <button class="btn">Editar </button>
+            <button class="btn" id="new_funcionario">Novo Cliente</button>
         </div>
     </nav>
 
@@ -154,12 +153,12 @@ $clientes = buscarClientes($conexao);
                             </div>
                     </div>
                     <div class="buttons_clie">
-                        <button type="button" class="btn" id="cancela_clie">CANCELAR</button>
-                        <button type="submit" class="btn" id="salvar_clie">SALVAR</button>
+                        <button type="button" class="btn" id="cancela_funci">CANCELAR</button>
+                        <button type="submit" class="btn" id="salvar_funci">SALVAR</button>
                     </div>
                 </form>
         </dialog>
-        <footer></footer>
+    </div>
 </body>
 
 </html>

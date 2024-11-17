@@ -24,8 +24,7 @@
 
     <nav class="menu-bar">
         <ul>
-            <li><button class="btn">Incluir</button></li>
-            <li><button class="btn">Editar</button></li>
+            <li><button class="btn" id="new_tipo_atend" >Incluir</button></li>
         </ul>
     </nav>
 
@@ -58,7 +57,7 @@
     </aside>
 
     <main>
-        
+
     </main>
     <dialog>
         <div class="container_cadastro">

@@ -2,7 +2,7 @@
     session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +22,7 @@
 
     <nav class="menu-bar">
         <ul>
-            <li><button class="btn">Incluir</button></li>
-            <li><button class="btn">Editar</button></li>
+            <li><button class="btn"  id="new_dificuldade">Incluir</button></li>
         </ul>
     </nav>
 
@@ -45,6 +44,32 @@
                 </ul>
             </nav>
         </aside>
+
+        <dialog>
+        <div class="container_cadastro">
+
+            <h1>CADASTRO DE DIFICULDADES</h1>
+
+            <form action="nova_dificuldade" method="post">
+
+                <div class="nova_dificuldade">
+                    <div class="descri_dificuldade">
+                        <label for="descricao">Descricao</label>
+                        <input type="text" placeholder="Descrição" id="descricao">
+                    </div>
+                    <div class="status_dificuldade">
+                        <label for="status_dificuldade">Ativo</label>
+                        <input type="checkbox" id ="status_equipe">
+                    </div>
+                </div>
+                    <div class ="buttons_dificuldade">
+                        <button class ="cancelar" class="btn" id="cancela_dificuldade"> CANCELAR</button>
+                        <button class ="salvar" class="btn" id="salvar_dificuldade"> SALVAR</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </dialog>
  
 </body>
 </html>

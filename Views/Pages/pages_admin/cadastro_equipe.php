@@ -33,8 +33,7 @@ $equipes = buscarEquipe($conexao);
 
     <nav class="menu-bar">
         <div class="crud_button">
-            <button class="btn" id="new_cliente">Novo Cliente</button></li>
-            <button class="btn">Editar </button></li>
+            <button class="btn" id="new_equipe">Nova Equipe</button></li>
         </div>
     </nav>
 
