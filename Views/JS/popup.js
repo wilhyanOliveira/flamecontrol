@@ -91,3 +91,19 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.close(); 
     }
 });
+
+//POPUP TIPO FUNCIONARIO - ACESSOS
+document.addEventListener('DOMContentLoaded', function() {
+    const new_tipo_funci = document.querySelector("#new_tipo_funci");
+    const modal = document.querySelector("dialog");
+    const buttonClose = document.querySelector("#close_modal");
+
+    new_tipo_funci.onclick = function() {
+        modal.showModal(); 
+    }
+
+    buttonClose.onclick = function() {
+        modal.close(); 
+    }
+});
+

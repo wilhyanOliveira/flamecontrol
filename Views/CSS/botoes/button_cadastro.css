@@ -1,3 +1,13 @@
+button
+{
+    background-color: rgb(53, 122, 189);
+    box-shadow: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold; 
+    outline: none;
+}
+
 .buttons, .buttons_clie
 {
     display: flex;          
@@ -11,21 +21,12 @@
     margin: 5px;
     width: 35%;           
     padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;
 }
 .buttons_clie button
 {
     border-radius: 5px;
-    margin-top: 20px;
     width: 35%;           
     padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;  
 }
 
 
@@ -47,10 +48,6 @@
     margin-bottom: none;
     width: 50%;           
     padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;  
 }
 
 /* STATUS*/
@@ -70,10 +67,6 @@
     margin-bottom: none;
     width: 50%;           
     padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;  
 }
 
 /* MOTIVO*/
@@ -93,11 +86,7 @@
     margin-top: 15px;
     margin-bottom: none;
     width: 50%;           
-    padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;  
+    padding: 10px; 
 }
 
 /*EQUIPE*/
@@ -106,7 +95,7 @@
 {
     display: flex;          
     justify-content: space-between; 
-    width: 600px;           
+    width: 640px;           
     margin-bottom: 5px;
     gap: 100px;
 }
@@ -118,10 +107,6 @@
     margin-bottom: none;
     width: 50%;           
     padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;  
 }
 
 /*TIPO DE ATENDIMENTO*/
@@ -141,11 +126,25 @@
     margin-top: 15px;
     margin-bottom: none;
     width: 50%;           
-    padding: 10px;
-    background-color:rgb(#357ABD) ; 
-    outline: none;
-    color: white;
-    font-weight: bold;  
+    padding: 10px; 
 }
 
-/**/
+/* TIPO FUNCIONARIO*/
+
+.buttons_tipo_funci
+{
+    display: flex;          
+    justify-content: space-between; 
+    width: 600px;           
+    margin-bottom: 5px;
+    gap: 100px;
+}
+
+.buttons_tipo_funci button
+{
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: none;
+    width: 50%;           
+    padding: 10px; 
+}

@@ -1,7 +1,9 @@
 .container_cadastro {
     max-width: 760px; 
-    margin: 7px;
-    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
     flex-direction: column;
 }
 
@@ -20,7 +22,7 @@ label {
 
 input { 
     padding: 5px;
-    margin: 10px 0; 
+    margin: 7px 0; 
     margin-bottom: 15px;
     border: none;
     outline: none;
@@ -84,7 +86,8 @@ input {
 }
 
 /*contato*/
-.contatos {
+.contatos 
+{
     display: flex;
     flex-direction: column;
     gap: 5px;  
@@ -97,16 +100,21 @@ input {
     display: flex;
     flex-direction: row;
 }
-.fone_cel, .telefone
+.fone_cel, .telefone .atividade
 {
-    margin-right: 40px;
+    margin-right: 25px;
 }
 
-.fone_cel, .tel_celular
+.fone_cel, .tel_celular .atividade
 {
-    margin-right: 50px;
+    margin-right: 25px;
 }
 
 #email {
-    width: 100%; 
+    width: 99%; 
+}
+
+.revenda
+{
+    margin:none
 }

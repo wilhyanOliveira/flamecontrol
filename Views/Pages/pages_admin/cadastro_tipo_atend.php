@@ -56,6 +56,10 @@
             </div>
         </div>
     </aside>
+
+    <main>
+        
+    </main>
     <dialog>
         <div class="container_cadastro">
 
@@ -81,7 +85,5 @@
             </form>
         </div>
     </dialog>
-    <main></main>
-    <footer></footer>
 </body>
 </html>

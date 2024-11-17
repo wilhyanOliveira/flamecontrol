@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: #181d23;
     color: #fff;
     overflow-x: hidden;
     height: 100vh;
@@ -132,10 +132,32 @@ header {
 
 main {
     margin-left: 250px;
-    padding: 20px;
     background-color: #181d23;
     flex-grow: 1;
     min-height: 80%;
-    margin-top: 0;
-    padding-top: 50px;
+    margin-top: none;
+    display: block;  
 }
+
+table {
+    width: 100%;
+    height: auto; 
+    border-collapse: collapse;
+    margin: none;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead {
+    background-color: #121212;
+    color: white;
+}
+
+tbody {
+    background-color: #181d23;
+}
+

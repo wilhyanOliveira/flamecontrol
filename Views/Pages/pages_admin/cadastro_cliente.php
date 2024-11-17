@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
+require('/../xampp/htdocs/flamecontrol/Controlers/listas/lista_cliente.php');
+
+
+$clientes = buscarClientes($conexao); 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +34,8 @@ session_start();
 
     <nav class="menu-bar">
         <div class="crud_button">
-            <button class="btn" id="new_cliente">Novo Cliente</button></li>
-            <button class="btn">Editar </button></li>
+            <button class="btn" id="new_cliente">Novo Cliente</button>
+            <button class="btn">Editar </button>
         </div>
     </nav>
 
@@ -50,6 +57,35 @@ session_start();
                 </ul>
             </nav>
         </aside>
+        <main>
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>Razão Social</th> <th>Nome Fantasia</th> <th>CNPJ</th> <th>Email</th> <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                    
+                    if (count($clientes) > 0) {
+                        foreach ($clientes as $cliente) {
+                            echo "<tr>";
+                            echo "<td>" . $cliente['ID'] . "</td>";
+                            echo "<td>" . $cliente['RAZAO_SOCIAL'] . "</td>";
+                            echo "<td>" . $cliente['NOME_FANTASIA'] . "</td>";
+                            echo "<td>" . $cliente['CNPJ'] . "</td>";
+                            echo "<td>" . $cliente['EMAIL'] . "</td>";
+                            echo "<td>" . $cliente['TELEFONE'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </main>
 
         <dialog>
             <div class="container_cadastro">
@@ -84,27 +120,38 @@ session_start();
                         </div>
                         <input type="text" name="referencia" placeholder="REFERENCIA" id="referencia">
                     </div>
-                    <div class="contatos">
+                    <div class="email">
+
                         <input type="email" name="email" placeholder="EMAIL" id="email" required>
+                    </div>
+
+
+                    <div class="contatos">
+                        
                         <div class="fone_cel">
                             <div class="telefone">
                                 <label for="fone">TELEFONE</label>
-                                <input type="text" name="fone" placeholder="(__)____-____" id="fone" required>
+                                <input type="tel" name="fone" placeholder="(__)____-____" id="fone" required>
                             </div>
+
                             <div class="tel_celular">
                                 <label for="celular">CELULAR</label>
-                                <input type="text" name="celular" placeholder="(__)_____-____" id="celular" required>
+                                <input type="tel" name="celular" placeholder="(__)_____-____" id="celular" required>
                             </div>
+
                             <div class="atividade">
-                                <input type="text" name="atividade" placeholder="atividade" id="atividade">
+                                <label for="ramo_ativi">Atividade</label>
+                                <input type="text" name="atividade" placeholder="Atividade" id="atividade" required>
                             </div>
+                        </div>
+
+                    </div>
                             <div class="revenda">
                                 <label for="revenda">REVENDA</label>
                                 <input type="checkbox" name="revendedor" id="revendedor">
                                 <label for="status">ATIVO</label>
                                 <input type="checkbox" name="ativo" id="status" value="on">
                             </div>
-                        </div>
                     </div>
                     <div class="buttons_clie">
                         <button type="button" class="btn" id="cancela_clie">CANCELAR</button>
@@ -112,11 +159,6 @@ session_start();
                     </div>
                 </form>
         </dialog>
-        <main>
-            <div container_grid>
-                
-            </div>
-        </main>
         <footer></footer>
 </body>
 

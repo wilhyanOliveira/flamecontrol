@@ -29,6 +29,38 @@
         </ul>
     </nav>
 
+    <main>
+    <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>Razão Social</th> <th>Nome Fantasia</th> <th>CNPJ</th> <th>Email</th> <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                    
+                    if (count($clientes) > 0) {
+                        foreach ($clientes as $cliente) {
+                            echo "<tr>";
+                            echo "<td>" . $cliente['ID'] . "</td>";
+                            echo "<td>" . $cliente['RAZAO_SOCIAL'] . "</td>";
+                            echo "<td>" . $cliente['NOME_FANTASIA'] . "</td>";
+                            echo "<td>" . $cliente['CNPJ'] . "</td>";
+                            echo "<td>" . $cliente['EMAIL'] . "</td>";
+                            echo "<td>" . $cliente['TELEFONE'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </main>
+    </main>
+
+
     <div class="container">
         
         <aside class="menu-lateral">
@@ -84,8 +116,5 @@
             </div>
 
         </dialog>
-    <main>
-    </main>
-    <footer>rodapé</footer>
 </body>
 </html>

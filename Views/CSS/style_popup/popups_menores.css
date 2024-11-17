@@ -5,8 +5,8 @@ dialog::backdrop
 
 dialog
 {
-    width: 780px;
-    height: 670px;
+    width: 670px;
+    height: 250px;
     background:rgb(38, 65, 92);
     border: 2px solid #cacaca;
     border-radius: 10px;
@@ -30,4 +30,3 @@ h1
 {
     color: rgb(255, 255, 255);
 }
-
