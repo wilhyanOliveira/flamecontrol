@@ -1,0 +1,18 @@
+.btn
+{
+    background-color: #357ABD;
+    margin: 5px;
+    color: #fff;
+    padding: 8px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#buscar_cliente
+{
+    align-items: center;
+    display: flex;
+    border: none;
+}

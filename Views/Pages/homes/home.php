@@ -11,7 +11,6 @@ if((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha'])== true))
 */
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,16 +22,17 @@ if((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha'])== true))
 <?php
     session_start();
 ?>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/atendimento.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/Cad_atendimento.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/buttons/buttons_news.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/buttons/button_cadastro.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/home/home.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_cadastro.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_pesquisa.css">
+
     <script src="../JS/popup.js" defer></script>
-    <title></title>
+    <title>Atendimento</title>
 </head>
 <body>
 <header> 
@@ -43,14 +43,25 @@ if((!isset($_SESSION['login']) == true) and (!isset($_SESSION['senha'])== true))
             <h1 class="titulo-header">Central de Atendimentos</h1> 
     </header>
 
+    <nav class="menu-bar">
+        <h1>Buscar Cliente </h1>
+        <div class="consulta_clie">
+            <input type="search" class="consulta" placeholder="Pesquisa por CNPJ" id="pesquisar">
+        </div>
+        <button class ="btn" id="btn_pesquisar" name="buscar_cliente" > BUSCAR </button>
+    </nav>
+
+
     <div class="container">
         
         <aside class="menu-lateral">
  
-        </aside>
+        </aside> 
   
     </div>
 
-<footer></footer>
+    <main>
+
+    </main>
 </body>
 </html>

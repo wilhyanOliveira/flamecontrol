@@ -40,7 +40,7 @@ session_start();
 $login = $_POST['login'] ?? null;
 $senha = $_POST['senha'] ?? null;
 
-$sql = "SELECT senha FROM t_funcionario WHERE cpf = :login";
+$sql = "SELECT f.id, f.senha, f.id_tipo_user FROM t_funcionario WHERE cpf = :login";
 $stmt = $conexao->prepare($sql);
 
 $stmt->bindParam(':login', $login);
@@ -49,13 +49,29 @@ $stmt->execute();
 if ($stmt->rowCount() > 0) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (password_verify($senha, $row['senha'])) {
-        header('Location: home.php');
-        exit(); 
-    } else {
+    if (password_verify($senha, $row['senha'])) 
+    {
+        $_SESSION['usuario_id'] = $row['id'];
+        $_SESSION['login'] = $row['login'];
+        $_SESSION['tipo_user_id'] = $row['id_tipo_user'];
+
+        if($_SESSION['tipo_user_id'] === '1')
+        {
+            header('Location: /../flamecontrol/Views/Pages/homes/home/Admin.php');
+            exit();
+        }
+        if($_SESSION['tipo_user_id'] === '2')
+        {
+            header('Location: /../flamecontrol/Views/Pages/homes/home/home.php');
+            exit();
+        }
+    } 
+    else 
+    {
         $acessado = false;
     }
-} else {
+} else
+{
     $acessado = false;
 }
 }
