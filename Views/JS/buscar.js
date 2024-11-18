@@ -1,27 +1,42 @@
-$(document).ready(function() {
-    $("#btn_pesquisar").click(function() {
-        var cnpj = $("#pesquisar").val().trim();
+document.addEventListener('DOMContentLoaded', function() {
 
+    const btnPesquisar = document.getElementById('btn_pesquisar'); 
+    const inputPesquisar = document.getElementById('pesquisar'); 
+
+    btnPesquisar.addEventListener('click', function() 
+    {
+        const cnpj = inputPesquisar.value.trim(); 
         if (cnpj === "") {
             alert("Por favor, insira um CNPJ para pesquisar.");
             return;
         }
 
-        $.ajax({
-            url: 'flamecontrol/Controlers/consultas_atend/consulta_clie.php',
+        fetch('http://localhost/flamecontrol/Controlers/consultas_atend/consulta_clie.php', {
             method: 'POST',
-            data: { cnpj: cnpj },
-            success: function(response) {
-                if (response != 'não encontrado') {
-                    var clienteId = response;
-                    window.location.href = "flamecontrol/Views/Pages/homes/home_clie.php?id=" + clienteId;
-                } else {
-                    alert("CNPJ não encontrado.");
-                }
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
-            error: function() {
-                alert("Erro ao realizar a busca.");
+            body: new URLSearchParams({
+                cnpj: cnpj 
+            })
+        })
+        .then(response => response.text()) 
+        .then(data => {
+           
+            if (data !== 'não encontrado' && data !== 'CNPJ inválido') 
+            {
+
+                window.location.href = "http://localhost/flamecontrol/Views/Pages/homes/home.php?id=" + data;
+            } else 
+            {
+                
+                alert("CNPJ não encontrado.");
             }
+        })
+        .catch(error => {
+            
+            alert("Erro ao realizar a busca.");
+            console.error('Erro:', error);
         });
     });
 });
