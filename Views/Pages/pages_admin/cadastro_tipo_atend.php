@@ -1,8 +1,13 @@
 <?php
     session_start();
+
+    require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
+    require('/../xampp/htdocs/flamecontrol/Controlers/listas/lista_tipo_atend.php');
+
+$tipo_atend = buscarTipoAtend($conexao); 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +28,9 @@
     </header>
 
     <nav class="menu-bar">
-        <ul>
-            <li><button class="btn" id="new_tipo_atend" >Incluir</button></li>
-        </ul>
+        <div class="crud_button">
+            <button class="btn" id="new_tipo_atend">Novo tipo Atendimento</button>
+        </div>
     </nav>
 
     <div class="container">
@@ -48,17 +53,37 @@
         </aside>
 
     </header>
-    <aside>
-        <div>
-            <div class = "button_tipo_atend">
-                <button class="btn" id="new_tipo_atend"><b> Novo tipo de Atendimento</b></button>
-            </div>
-        </div>
-    </aside>
-
     <main>
+        <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>DESCRICAO</th> 
+                    </tr>
+                </thead>
 
+                <tbody>
+
+                    <?php
+                    
+                    if (count($tipo_atend) > 0) 
+                    {
+                        foreach ($tipo_atend as $tipo_atend) 
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $tipo_atend['ID'] . "</td>";
+                            echo "<td>" . $tipo_atend['DESCRICAO'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } 
+                    else 
+                    {
+                        echo "<tr><td colspan='6'>Nenhum tipo de atendimento encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+        </table>
     </main>
+
     <dialog>
         <div class="container_cadastro">
 

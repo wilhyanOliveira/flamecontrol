@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    
+    require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
+    require('/../xampp/htdocs/flamecontrol/Controlers/listas/lista_motivo.php');
+
+    $motivo = buscarMotivo($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,42 +28,10 @@
             <h1 class="titulo-header">Central de Atendimentos</h1> 
     </header>
     <nav class="menu-bar">
-        <ul>
-            <li><button class="btn">Incluir</button></li>
-            <li><button class="btn">Editar</button></li>
-        </ul>
+        <div class="crud_button">
+            <button class="btn" id="new_motivo">Novo Motivo</button>
+        </div>
     </nav>
-
-    <main>
-    <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>ID</th> <th>Razão Social</th> <th>Nome Fantasia</th> <th>CNPJ</th> <th>Email</th> <th>Telefone</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
-                    
-                    if (count($clientes) > 0) {
-                        foreach ($clientes as $cliente) {
-                            echo "<tr>";
-                            echo "<td>" . $cliente['ID'] . "</td>";
-                            echo "<td>" . $cliente['RAZAO_SOCIAL'] . "</td>";
-                            echo "<td>" . $cliente['NOME_FANTASIA'] . "</td>";
-                            echo "<td>" . $cliente['CNPJ'] . "</td>";
-                            echo "<td>" . $cliente['EMAIL'] . "</td>";
-                            echo "<td>" . $cliente['TELEFONE'] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </main>
-    </main>
 
     <div class="container">
         
@@ -78,16 +52,37 @@
             </nav>
         </aside>
 
-    </header>
-    <aside>
-        <div>
-            <div class = "button_motivo">
-                <button class="btn" id="new_motivo"><b> Novo Motivo </b></button>
-            </div>
+    <main>
+        <table class="tabela">
+                <thead>
+                    <tr>
+                    <th>ID</th> <th>DESCRICAO</th> 
+                    </tr>
+                </thead>
 
-        
-        </div>
-    </aside>
+                <tbody>
+
+                    <?php
+                    
+                    if (count($motivo) > 0) 
+                    {
+                        foreach ($motivo as $motivo) 
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $motivo['ID'] . "</td>";
+                            echo "<td>" . $motivo['descricao'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } 
+                    else 
+                    {
+                        echo "<tr><td colspan='6'>Nenhum motivo encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+        </table>
+    </main>
+
     <dialog>
             <div class="container_cadastro">
 

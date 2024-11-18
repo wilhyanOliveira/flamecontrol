@@ -1,0 +1,30 @@
+.container_cadastro {
+    max-width: 760px; 
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.descricoes {
+    display: flex;
+    flex-direction: column; 
+}
+
+label {
+    color: white;
+    margin-bottom: 5px; 
+    font-weight: bold;
+    font-size: 12px;
+    margin: 5px;
+}
+
+input { 
+    padding: 5px;
+    margin: 7px 0; 
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    box-sizing: border-box; 
+}

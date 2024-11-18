@@ -1,13 +1,22 @@
 <?php
     session_start();
+
+    require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
+    require('/../xampp/htdocs/flamecontrol/Controlers/listas/lista_dificuldade.php');
+
+    $dificuldade = buscarDificuldade($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/admin_cad/backgroud_cad_admin.css">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/cad_dificuldade.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/style_popup/popups_menores.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_cadastro.css">
     <script src="/../flamecontrol/Views/JS/popup.js" defer></script>
     <title>Dificuldades</title>
 </head>
@@ -18,12 +27,12 @@
         </div>
 
             <h1 class="titulo-header">Central de Atendimentos</h1> 
-    </header>]
+    </header>
 
     <nav class="menu-bar">
-        <ul>
-            <li><button class="btn"  id="new_dificuldade">Incluir</button></li>
-        </ul>
+        <div class="crud_button">
+            <button class="btn" id="new_dificuldade">Nova Dificuldade</button>
+        </div>
     </nav>
 
     <div class="container">
@@ -44,6 +53,34 @@
                 </ul>
             </nav>
         </aside>
+
+        <main>
+        <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>Descrição</th> 
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php
+                    
+                    if (count($dificuldade) > 0) {
+                        foreach ($dificuldade as $dificuldade) {
+                            echo "<tr>";
+                            echo "<td>" . $dificuldade['ID'] . "</td>";
+                            echo "<td>" . $dificuldade['descricao'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+        </table>
+    </main>
+
 
         <dialog>
         <div class="container_cadastro">

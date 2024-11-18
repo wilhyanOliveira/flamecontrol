@@ -36,34 +36,6 @@ $tipo_user = buscarTipoUser($conexao);
         </div>
     </nav>
 
-    <main>
-    <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>ID</th> <th>Descrição</th> 
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <?php
-                    
-                    if (count($tipo_user) > 0) {
-                        foreach ($tipo_user as $tipo_user) {
-                            echo "<tr>";
-                            echo "<td>" . $tipo_user['ID'] . "</td>";
-                            echo "<td>" . $tipo_user['descricao'] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-        </table>
-
-    </main>
-
     <div class="container">
         
         <aside class="menu-lateral">
@@ -82,6 +54,38 @@ $tipo_user = buscarTipoUser($conexao);
                 </ul>
             </nav>
         </aside>
+
+    <main>
+        <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>DESCRICAO</th> 
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php
+                    
+                    if (count($tipo_user) > 0) 
+                    {
+                        foreach ($tipo_user as $tipo_user) 
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $tipo_user['ID'] . "</td>";
+                            echo "<td>" . $tipo_user['DESCRICAO'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } 
+                    else 
+                    {
+                        echo "<tr><td colspan='6'>Nenhum tipo de acesso encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+        </table>
+    </main>
+
 
         <dialog>
         <div class="container_cadastro">

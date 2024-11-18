@@ -1,15 +1,15 @@
 <?php
 
-function buscarMotivo($conexao) {
-    $sql = "SELECT ID, DESCRICAO FROM T_MOTIVO_ATEND";
+function buscarStatus($conexao) {
+    $sql = "SELECT ID, DESCRICAO FROM T_STATUS_ATENDIMENTO";
     $result = mysqli_query($conexao, $sql); 
 
     if ($result) {
-        $motivo = [];
+        $status = [];
         while ($row = mysqli_fetch_assoc($result)) {
-            $motivo[] = $row;  
+            $status[] = $row;  
         }
-        return $motivo;
+        return $status;
     } else {
         return [];  
     }

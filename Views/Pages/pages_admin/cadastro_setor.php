@@ -1,15 +1,20 @@
 <?php
     session_start();
+
+    require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
+    require('/../xampp/htdocs/flamecontrol/Controlers/listas/lista_setor.php');
+
+    $setor = buscarSetor($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/admin_cad/backgroud_cad_admin.css">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/cad_setor.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/buttons/buttons_news.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/buttons/button_cadastro.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/style_popup/popups_menores.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_cadastro.css">
     <script src="/../flamecontrol/Views/JS/popup.js" defer></script>
     <title>Setores</title>
 </head>
@@ -23,43 +28,10 @@
     </header>
 
     <nav class="menu-bar">
-        <ul>
-            <li><button class="btn">Incluir</button></li>
-            <li><button class="btn">Editar</button></li>
-        </ul>
+        <div class="crud_button">
+            <button class="btn" id="new_setor">Novo Setor</button>
+        </div>
     </nav>
-
-    <main>
-    <table class="tabela">
-                <thead>
-                    <tr>
-                        <th>ID</th> <th>Razão Social</th> <th>Nome Fantasia</th> <th>CNPJ</th> <th>Email</th> <th>Telefone</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php
-                    
-                    if (count($clientes) > 0) {
-                        foreach ($clientes as $cliente) {
-                            echo "<tr>";
-                            echo "<td>" . $cliente['ID'] . "</td>";
-                            echo "<td>" . $cliente['RAZAO_SOCIAL'] . "</td>";
-                            echo "<td>" . $cliente['NOME_FANTASIA'] . "</td>";
-                            echo "<td>" . $cliente['CNPJ'] . "</td>";
-                            echo "<td>" . $cliente['EMAIL'] . "</td>";
-                            echo "<td>" . $cliente['TELEFONE'] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </main>
-    </main>
-
 
     <div class="container">
         
@@ -80,19 +52,40 @@
             </nav>
         </aside>
 
-    </header>
-    <aside>
-    <div>
-        <div class = "button_setor">
-            <button class="btn" id="new_setor"><b> Novo Setor</b></button>
-        </div>
-    </div>
-    </aside>
+    <main>
+        <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th> <th>Descrição</th> 
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php
+                    
+                    if (count($setor) > 0) 
+                    {
+                        foreach ($setor as $setor) 
+                        {
+                            echo "<tr>";
+                            echo "<td>" . $setor['ID'] . "</td>";
+                            echo "<td>" . $setor['descricao'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='6'>Nenhum setor encontrado.</td></tr>";
+                    }
+                    ?>
+                </tbody>
+        </table>
+    </main>
+
         <dialog>
            
         <div class="container_cadastro">
 
-                <h1>CADASTRO DE EQUIPES</h1>
+                <h1>CADASTRO DE SETORES</h1>
 
             <form action="novo_equipe" method="post">
 

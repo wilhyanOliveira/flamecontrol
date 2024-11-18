@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // POPUP CADASTRO DIFICULDADE DE ATENDIMENTOS
 document.addEventListener('DOMContentLoaded', function() {
-    const new_dificuldade = document.querySelector("#new_dificuldade7");
+    const new_dificuldade = document.querySelector("#new_dificuldade");
     const modal = document.querySelector("dialog");
     const cancela_dificuldade = document.querySelector("#cancela_dificuldade");
 
