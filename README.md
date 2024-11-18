@@ -1,0 +1,1 @@
+Projeto desenvolvido como TCC (trabalho de conclusão de curso) em Engenharia de Software na Universidade do Contestado UnC com a proposta do desenvolvimento de um software Web para registro de atendimentos de equipes de Suporte Técnico
