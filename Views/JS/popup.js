@@ -1,16 +1,12 @@
-// PopUp Cadastro de Atendimento
-
 document.addEventListener('DOMContentLoaded', function() {
     const new_atendimento = document.querySelector("#new_atendimento");
     const modal = document.querySelector("dialog");
     const buttonClose = document.querySelector("#close_modal");
 
-    // Abrindo o modal ao clicar no botão
     new_atendimento.onclick = function() {
         modal.showModal(); 
     }
 
-    // Fechando o modal ao clicar no botão dentro do modal
     buttonClose.onclick = function() {
         modal.close(); 
     }
