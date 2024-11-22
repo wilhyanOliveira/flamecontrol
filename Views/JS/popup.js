@@ -1,9 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const new_atendimento = document.querySelector("#new_atendimento");
+document.addEventListener('DOMContentLoaded', function() 
+{
+    const new_atendimento_clie = document.querySelector("#new_atendimento_clie");
     const modal = document.querySelector("dialog");
     const buttonClose = document.querySelector("#close_modal");
 
-    new_atendimento.onclick = function() {
+    new_atendimento_clie.onclick = function() {
         modal.showModal(); 
     }
 
@@ -13,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //POPUP CADASTRO DE CLIENTES 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() 
+{
     const new_cliente = document.querySelector("#new_cliente");
     const modal = document.querySelector("dialog");
     const cancela_clie = document.querySelector("#cancela_clie");
@@ -29,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //POPUP CADASTRO SETOR
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() 
+{
     const new_setor = document.querySelector("#new_setor");
     const modal = document.querySelector("dialog");
     const cancela_setor = document.querySelector("#cancela_setor");
@@ -76,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // POPUP CADASTRO MOTIVO DE ATENDIMENTO
 document.addEventListener('DOMContentLoaded', function() {
-    const new_new_motivo = document.querySelector("#new_motivo");
+    const new_motivo = document.querySelector("#new_motivo");
     const modal = document.querySelector("dialog");
     const cancela_motivo = document.querySelector("#cancela_motivo");
 

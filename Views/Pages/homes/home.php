@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_cadastro.css">
     <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_pesquisa.css">
 
-    <script src="/flamecontrol/Views/JS/popup.js" defer></script>
-    <script src="/flamecontrol/Views/JS/buscar.js" defer></script> 
+</script>
+
+    </script>
 </head>
 <body>
     <header>
@@ -32,10 +33,11 @@
 
     <nav class="menu-bar">
         <h1>Buscar Cliente</h1>
-        <div class="consulta_clie">
-            <input type="text" class="consulta" placeholder="Pesquisa por CNPJ" id="pesquisar">
-        </div>
-        <button class="btn" id="btn_pesquisar" name="buscar_cliente">BUSCAR</button>
+        <form action="/../flamecontrol/Controlers/consultas_atend/consulta_clie.php" method="POST">
+            <input type="text" name="cnpj" placeholder="Digite o CNPJ" required>
+
+            <button type="submit">Consultar</button>
+    </form>
     </nav>
 
     <div class="container">
@@ -49,3 +51,4 @@
     </main>
 </body>
 </html>
+

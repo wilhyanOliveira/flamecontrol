@@ -1,12 +1,10 @@
 <?php
-
 require '/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php';
 
 $mensagem = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    
     $razao = $_POST['razao'];
     $fantasia = $_POST['fantasia'];
     $cnpj = $_POST['cnpj'];
@@ -40,17 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         } 
         else 
         {
-        
             $sql = "INSERT INTO T_CLIENTE (ATIVO, RAZAO_SOCIAL, NOME_FANTASIA, CNPJ, IE, EMAIL, TELEFONE, CELULAR, DT_HR_CADASTRO, ATIVIDADE, CEP, UF, MUNICIPIO, ENDERECO, BAIRRO, REFERENCIA, REVENDEDOR) 
                 VALUES ('$ativo', '$razao', '$fantasia', '$cnpj', '$ie', '$email', '$fone', '$celular', '$data_cadastro', '$atividade', '$cep', '$uf', '$municipio', '$rua', '$bairro', '$referencia', '$revendedor')";
         }
         if (mysqli_query($conn, $sql)) 
         {
             header("location: /../flamecontrol/Views/Pages/pages_admin/cadastro_cliente.php");
-
             exit;
-            
-
         } 
         else 
         {
@@ -58,6 +52,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         }
         mysqli_close($conn);
     } 
-    
 }
 ?>

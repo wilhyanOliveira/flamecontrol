@@ -1,13 +1,36 @@
+<?php
+
+session_start();
+
+require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
+require('/../xampp/htdocs/flamecontrol/Controlers/consultas_atend/consulta_clie.php');
+
+
+if (isset($_GET['cliente_id'])) {
+    $cliente_id = $_GET['cliente_id'];
+
+
+    $dados_cliente = buscar_dados_cliente($conexao);
+
+    if (isset($dados_cliente['erro']))
+    {
+        echo $dados_cliente['erro']; 
+    } 
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/atendimento.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/admin_cad/backgroud_cad_admin.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/style_popup/popups.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/atendimento.css">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/Cad_atendimento.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/buttons/buttons_news.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/buttons/button_cadastro.css">
-    <script src="../JS/popup.js" defer></script>
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_cadastro.css">
+    <script src="/../flamecontrol/Views/JS/popup.js" defer></script>
     <title>Atendimento</title>
 </head>
 <body>
@@ -19,6 +42,10 @@
             <h1 class="titulo-header">Central de Atendimentos</h1> 
     </header>
 
+    <nav class="menu-bar">
+
+    </nav>
+
     <div class="container">
         
         <aside class="menu-lateral">
@@ -28,13 +55,15 @@
 
                     </div>
                     <div class = "button_new">
-                        <button class="btn" id="new_atendimento"><b> Novo Atendimento</b></button>
+                        <button class="btn" id="new_atendimento_clie"><b> Cadastrar</b></button>
                     </div>
                 </div>
             </nav>
         </aside>
   
-    </div>
+        <main>
+        
+        </main>
 
     <dialog>
         <div class="container_cadastro">
@@ -95,31 +124,26 @@
         
         </div>
     </dialog>
-
-<footer></footer>
 </body>
 </html>
 
 <script>
-/*
+
 document.getElementById('dataForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio do formulário
+    event.preventDefault();
 
     const name = document.getElementById('name').value;
     const info = document.getElementById('info').value;
 
-    // Cria um novo card
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `<h3>${name}</h3><p>${info}</p>`;
 
-    // Adiciona o card ao contêiner
     document.getElementById('cardContainer').appendChild(card);
 
-    // Limpa o formulário
     document.getElementById('dataForm').reset();
 });
-*/
+
 </script>
 
 <?php

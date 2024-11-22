@@ -102,3 +102,41 @@ main {
     margin-top: 0;
     padding-top: 20px; 
 }
+
+.menu-bar {
+    background-color: rgb(38, 65, 92);
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    z-index: 90;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.menu-bar .consulta_clie {
+    display: flex;
+}
+
+.menu-bar input
+{
+    padding: 10px;
+    margin: 7px 0; 
+    margin-bottom: 7px;
+    border: none;
+    outline: none;
+    box-sizing: border-box; 
+    width: 300px;
+}
+
+.menu-bar h1
+{
+   font-size: 18px; 
+   margin-right: 15px;
+}
