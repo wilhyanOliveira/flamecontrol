@@ -111,10 +111,52 @@ $funcionario = buscarFuncionario($conexao);
                                 <input type="checkbox" name="ativo" id="status" value="on">
                             </div>
                     </div>
+
+                    <div class ="tipo_user">
+                        <select name="tipo_user" id="tipo_user">
+                            <option value="">Tipo de usuário</option>
+
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
+            
+                        </select>
+                    </div>
+
+                    
+                    <div class ="equipe_atend">
+                        <select name="equipe_atend" id="equipe_atend">
+                            <option value="">Equipe de Atendimento</option>
+
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
+            
+                        </select>
+                    </div>
+
+                    <div class ="setor">
+                        <select name="setor" id="setor">
+                            <option value="">Setor</option>
+
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
+            
+                        </select>
+                    </div>
+
                     <div class="buttons_clie">
                         <button type="button" class="btn" id="cancela_clie">CANCELAR</button>
                         <button type="submit" class="btn" id="salvar_clie">SALVAR</button>
                     </div>
+
                 </form>
         </dialog>
 </body>

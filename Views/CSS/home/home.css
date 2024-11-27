@@ -140,3 +140,51 @@ main {
    margin-right: 15px;
 }
 
+
+main {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    height: 100vh;
+  }
+  
+  .usuario, .atendimento_prestado {
+    margin-top: 50px;
+    flex: 1 1 48%; 
+    overflow: hidden; 
+    max-height: 50vh;
+    padding: 10px;
+    box-sizing: border-box; 
+  }
+
+  .atendimento_prestado h1
+  {
+    margin: none;
+    font-size: 20px;
+  }
+
+  .pendencias {
+    width: 100%; 
+    max-height: 50vh; 
+    padding: 10px;
+    box-sizing: border-box; 
+  }
+
+  .pendencias h1
+  {
+    margin: none;
+    font-size: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+
+

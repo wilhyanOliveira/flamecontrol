@@ -1,9 +1,18 @@
 <?php
-
+/*
 session_start();
 
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario']; 
+} 
+else 
+{
+    echo "Você não está logado.";
+}
+*/
 require('/../xampp/htdocs/flamecontrol/Models/ConexaoBD/conexao.php');
 require('/../xampp/htdocs/flamecontrol/Controlers/consultas_atend/consulta_clie.php');
+//require('/../xampp/htdocs/flamecontrol/Controlers/listas/lista_atendimentos.php');
 
 
 if (isset($_GET['cliente_id'])) {
@@ -17,6 +26,8 @@ if (isset($_GET['cliente_id'])) {
         echo $dados_cliente['erro']; 
     } 
 }
+
+//$atendimentos = buscaAtendimentos($conexao);
 ?>
 
 <!DOCTYPE html>
@@ -55,13 +66,22 @@ if (isset($_GET['cliente_id'])) {
 
                     </div>
                     <div class = "button_new">
-                        <button class="btn" id="new_atendimento_clie"><b> Cadastrar</b></button>
+                        <button class="btn" id="new_atendimento_clie"><b> NOVO</b></button>
                     </div>
                 </div>
             </nav>
         </aside>
   
         <main>
+        <div>
+        <h2>Lista de Atendimentos</h2>
+
+    
+    </div>
+
+
+</section>
+    </div>
         
         </main>
 
@@ -70,17 +90,27 @@ if (isset($_GET['cliente_id'])) {
 
             <h1>CADASTRO DE ATENDIMENTO</h1>
 
-            <form action="novo_atendimento" method="post">
+            <form action="/flamecontrol/Controlers/Cad_atendimentos/cad_atendi.php" method="post">
 
                 <div class="selects">
 
                     <div class = "funci_status">
                         <select name="funcionario" id="funcionario">
                             <option value="">Funcionario</option>
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
                         </select>
 
                         <select name="status" id="Status">
                             <option value="">status</option>
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
                         </select>
                     </div>
 
@@ -100,10 +130,20 @@ if (isset($_GET['cliente_id'])) {
                     <div class="selects_tipe">
                         <select name="tipo_atend" id="tipo_atend">
                             <option value="">Tipo</option>
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
                         </select>
 
                         <select name="dificul_atend" id="dificul_atend">
                             <option value="">Dificuldade</option>
+                                <?php foreach ($motivos as $motivo): ?>
+                                    <option value="<?php echo htmlspecialchars($motivo['id']); ?>">
+                                        <?php echo htmlspecialchars($motivo['motivo']); ?>
+                                    </option>
+                                <?php endforeach; ?>
                         </select>
                     </div>
 
@@ -116,11 +156,13 @@ if (isset($_GET['cliente_id'])) {
                     <textarea name="descricao"></textarea>
                 </div>
 
+                <div class ="buttons">
+
+                <button class ="cancelar"> CANCELAR</button>
+                <button class ="Salvar" id="salvar_atend" type="submit"> SALVAR</button>
+                </div>
             </form>
-        <div class ="buttons">
-            <button class ="cancelar"> CANCELAR</button>
-            <button class ="alvar" id="salvar_atend"> SALVAR</button>
-        </div>
+
         
         </div>
     </dialog>

@@ -62,21 +62,22 @@
 
                 <tbody>
 
-                    <?php
-                    
-                    if (count($setor) > 0) 
-                    {
-                        foreach ($setor as $setor) 
+                <?php
+                    if (count($setor) > 0) {
+                        foreach ($setor as $item) 
                         {
-                            echo "<tr>";
-                            echo "<td>" . $setor['ID'] . "</td>";
-                            echo "<td>" . $setor['descricao'] . "</td>";
-                            echo "</tr>";
+                        echo "<tr>";
+                        echo "<td>" . $item['ID'] . "</td>";
+                        echo "<td>" . $item['DESCRICAO'] . "</td>";  
+                        echo "</tr>";
                         }
-                    } else {
-                        echo "<tr><td colspan='6'>Nenhum setor encontrado.</td></tr>";
+
+                    } 
+                    else 
+                    {
+                    echo "<tr><td colspan='2'>Nenhum setor encontrado.</td></tr>";
                     }
-                    ?>
+?>
                 </tbody>
         </table>
     </main>
@@ -87,22 +88,22 @@
 
                 <h1>CADASTRO DE SETORES</h1>
 
-            <form action="novo_equipe" method="post">
+            <form action="/flamecontrol/Controlers/cadastros_admin/cad_setor.php" method="post">
 
                 <div class="novo_setor">
                     <div class="descri_setor">
                         <label for="descricao">Descricao</label>
-                        <input type="text" placeholder="Descrição" id="descricao">
+                        <input type="text" placeholder="Descrição" id="descricao" name="descricao">
                     </div>
                     <div class="status_setor">
                         <label for="status_setor">Ativo</label>
-                        <input type="checkbox" id="status_equipe">
+                        <input type="checkbox" id="status_setor" name="id_setor">
                     </div>
                 </div>
     
-                <div class="buttons_equipe">
-                    <button class="cancelar" id="cancela_setor"> CANCELAR</button>
-                    <button class="salvar" id="salvar_setor"> SALVAR</button>
+                <div class="buttons_setor">
+                    <button class="cancelar" id="cancela_setor" name="cancela_setor"> CANCELAR</button>
+                    <button class="salvar" id="salvar_setor"  type="submit" > SALVAR</button>
                 </div>
     
             </form>

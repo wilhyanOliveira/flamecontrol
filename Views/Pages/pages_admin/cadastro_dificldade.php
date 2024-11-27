@@ -67,13 +67,15 @@
                     <?php
                     
                     if (count($dificuldade) > 0) {
-                        foreach ($dificuldade as $dificuldade) {
+                        foreach ($dificuldade as $dificuldade) 
+                        {
                             echo "<tr>";
                             echo "<td>" . $dificuldade['ID'] . "</td>";
-                            echo "<td>" . $dificuldade['descricao'] . "</td>";
+                            echo "<td>" . $dificuldade['DESCRICAO'] . "</td>";
                             echo "</tr>";
                         }
-                    } else {
+                    } else 
+                    {
                         echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
                     }
                     ?>
@@ -87,12 +89,12 @@
 
             <h1>CADASTRO DE DIFICULDADES</h1>
 
-            <form action="nova_dificuldade" method="post">
+            <form action="/flamecontrol/Controlers/cadastros_admin/cad_dificuldade.php" method="post">
 
                 <div class="nova_dificuldade">
                     <div class="descri_dificuldade">
                         <label for="descricao">Descricao</label>
-                        <input type="text" placeholder="Descrição" id="descricao">
+                        <input type="text" placeholder="Descrição" id="descricao" name="descricao">
                     </div>
                     <div class="status_dificuldade">
                         <label for="status_dificuldade">Ativo</label>
@@ -101,7 +103,7 @@
                 </div>
                     <div class ="buttons_dificuldade">
                         <button class ="cancelar" class="btn" id="cancela_dificuldade"> CANCELAR</button>
-                        <button class ="salvar" class="btn" id="salvar_dificuldade"> SALVAR</button>
+                        <button class ="salvar" class="btn" id="salvar_dificuldade" type="submit"> SALVAR</button>
                     </div>
                 </div>
             </form>

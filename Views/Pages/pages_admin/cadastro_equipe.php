@@ -65,20 +65,21 @@ $equipes = buscarEquipe($conexao);
                 </thead>
 
                 <tbody>
-
-                    <?php
-                    
-                    if (count($equipes) > 0) {
-                        foreach ($equipes as $equipes) {
-                            echo "<tr>";
-                            echo "<td>" . $equipes['ID'] . "</td>";
-                            echo "<td>" . $equipes['descricao'] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='6'>Nenhum cliente encontrado.</td></tr>";
-                    }
-                    ?>
+                <?php
+if (count($equipes) > 0) 
+{
+    foreach ($equipes as $equipe) 
+    { 
+        echo "<tr>";
+        echo "<td>" . $equipe['ID'] . "</td>";  
+        echo "<td>" . $equipe['DESCRICAO'] . "</td>";  
+        echo "</tr>";
+    }
+} else 
+{
+    echo "<tr><td colspan='2'>Nenhuma equipe encontrada.</td></tr>";
+}
+?>
                 </tbody>
         </table>
     </main>
@@ -88,12 +89,12 @@ $equipes = buscarEquipe($conexao);
 
             <h1>CADASTRO DE EQUIPES</h1>
 
-            <form action="novo_equipe" method="post">
+            <form action="/flamecontrol/Controlers/cadastros_admin/cad_equipes.php" method="post">
 
                 <div class="novo_equipe">
                     <div class="descri_equipe">
                         <label for="descricao">Descricao</label>
-                        <input type="text" placeholder="Descrição" id="descricao">
+                        <input type="text" placeholder="Descrição" id="descricao" name="descricao">
                     </div>
                     <div class="status_equipe">
                         <label for="status_equipe">Ativo</label>
@@ -102,7 +103,7 @@ $equipes = buscarEquipe($conexao);
                 </div>
                     <div class ="buttons_equipe">
                         <button class ="cancelar" class="btn" id="cancela_equipe"> CANCELAR</button>
-                        <button class ="salvar" class="btn" id="salvar_equipe"> SALVAR</button>
+                        <button class ="salvar" class="btn" id="salvar_equipe" type="submit"> SALVAR</button>
                     </div>
                 </div>
             </form>

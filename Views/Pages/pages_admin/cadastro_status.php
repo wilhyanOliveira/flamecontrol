@@ -71,14 +71,15 @@
                     
                     if (count($status) > 0) 
                     {
-                        foreach ($setor as $setor) 
+                        foreach ($status as $status) 
                         {
                             echo "<tr>";
                             echo "<td>" . $status['ID'] . "</td>";
-                            echo "<td>" . $status['descricao'] . "</td>";
+                            echo "<td>" . $status['DESCRICAO'] . "</td>";
                             echo "</tr>";
                         }
-                    } else {
+                    } else 
+                    {
                         echo "<tr><td colspan='6'>Nenhum status encontrado.</td></tr>";
                     }
                     ?>
@@ -93,12 +94,12 @@
 
                 <h1>CADASTRO DE STATUS</h1>
 
-                <form action="novo_status" method="post">
+                <form action="/flamecontrol/Controlers/cadastros_admin/cad_status.php" method="post">
 
                 <div class="novo_status">
                     <div class="descri_status">
                         <label for="descricao">Descricao</label>
-                        <input type="text" placeholder="Descrição" id="descricao">
+                        <input type="text" placeholder="Descrição" id="descricao" name="descricao">
                     </div>
                     <div class="status_status">
                         <label for="status_status">Ativo</label>
@@ -107,7 +108,7 @@
                 </div>
                     <div class ="buttons_status">
                         <button class ="cancelar" id="cancela_status"> CANCELAR</button>
-                        <button class ="salvar" id="salvar_status"> SALVAR</button>
+                        <button class ="salvar" id="salvar_status" type="submit"> SALVAR</button>
                     </div>
             </div>
             </form>

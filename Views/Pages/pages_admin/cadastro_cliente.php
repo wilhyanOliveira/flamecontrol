@@ -123,6 +123,7 @@ $clientes = buscarClientes($conexao);
 
                         <input type="email" name="email" placeholder="EMAIL" id="email" required>
                     </div>
+                    
 
 
                     <div class="contatos">

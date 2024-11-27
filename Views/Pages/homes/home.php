@@ -1,10 +1,14 @@
 <?php
-// Inicia a sessão, caso necessário
-// session_start(); // Descomente se precisar de controle de sessão
-// if ((!isset($_SESSION['login']) == true) && (!isset($_SESSION['senha']) == true)) {
-//     header('location: login.php');
-// }
-// $logado = $_SESSION['login'];
+session_start();
+
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario']; 
+    echo "Bem-vindo, " . $usuario['nome']; 
+} 
+else 
+{
+    echo "Você não está logado.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +51,34 @@
     </div>
 
     <main>
+    <div class="usuario">
+
+  </div>
+  
+  <div class="atendimento_prestado">
+        <h1> Atendimentos</h1>
+    <table>
+      <tr>
+        <th>CNPJ</th>
+        <th>STATUS</th>
+      </tr>
+   
+    </table>
+  </div>
+
+  <div class="pendencias">
+    <h1>Pendencias</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>CLIENTE</th>
+        <th>TIPO ATENDIMENTO</th>
+        <th>GRAVIDADE</th>
+        <th>STATUS</th>
+      </tr>
+
+    </table>
+  </div>
        
     </main>
 </body>
