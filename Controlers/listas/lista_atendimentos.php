@@ -1,51 +1,74 @@
 <?php
-// Função para obter atendimentos do banco de dados
-function buscaAtendimentos() 
+
+session_start();
+
+function buscaAtendimentos($conexao) 
 {
-    // Dados de conexão (substitua com suas credenciais)
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $dbname = "nome_do_banco";
-    
-    // Criando a conexão
-    $conn = new mysqli($host, $user, $pass, $dbname);
 
-    // Verifica se houve erro na conexão
-    if ($conn->connect_error) {
-        die("Erro de conexão: " . $conn->connect_error);
+    if (isset($_SESSION['cliente_id'])) 
+    {
+        $cliente_id = $_SESSION['cliente_id']; 
+    } 
+    else 
+    {
+        echo "Erro: Cliente não encontrado na sessão.";
+        return; 
     }
 
-    // Consulta SQL para pegar os dados dos atendimentos
     $sql = "SELECT 
-                atendimentos.id, 
-                atendimentos.data_inicio, 
-                atendimentos.data_fim, 
-                usuarios.nome AS usuario, 
-                tipos_atendimento.tipo, 
-                funcionarios.nome AS funcionario, 
-                atendimentos.descricao, 
-                solicitacoes.descricao_cliente 
-            FROM atendimentos
-            JOIN usuarios ON atendimentos.usuario_id = usuarios.id
-            JOIN tipos_atendimento ON atendimentos.tipo_atendimento_id = tipos_atendimento.id
-            JOIN funcionarios ON atendimentos.funcionario_id = funcionarios.id
-            JOIN solicitacoes ON atendimentos.solicitacao_id = solicitacoes.id";
+                a.ID,
+                a.DT_HR_CAD,
+                a.SOLICITACAO_CLIE,
+                a.DESCRICAO,
+                ta.DESCRICAO,
+                sa.DESCRICAO,
+                da.DESCRICAO,
+                ma.DESCRICAO,
+                fc.DESCRICAO,
+                f.NOME,
+                c.ID
 
-    $result = $conn->query($sql);
+            FROM T_ATENDIMENTO a
+            inner join T_TIPO_ATENDIMENTO ta
+            on ta.ID = a.ID_TIPO_ATEND
+            inner join T_STATUS_ATENDIMENTO sa
+            on sa.ID = a.ID_STATUS_ATEND
+            inner join T_DIFICUL_ATEND da
+            on da.ID = a.ID_DIFIC_ATEND
+            inner join T_MOTIVO_ATEND ma
+            on ma.ID = a.ID_MOTIVO
+            inner join T_FUNCIO_CLIE fc
+            on fc.ID = a.ID_FUNCI_CLIE
+            inner join T_FUNCIONARIO f
+            on f.ID = a.ID_FUNCI
+            inner join T_CLIENTE c
+            on c.ID = a.ID_CLIE
 
-    $atendimentos = [];
+            WHERE c.id = ?"; 
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $atendimentos[] = $row;
+    if ($stmt = $conexao->prepare($sql)) 
+    {
+
+        $stmt->bind_param("i", $cliente_id); 
+ 
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $lista_atendimentos = array();
+
+        while ($row = $result->fetch_assoc()) 
+        {
+            $lista_atendimentos[] = $row; 
         }
-    } else {
-        echo "Nenhum atendimento encontrado.";
+
+        return $lista_atendimentos;
+    } 
+    else 
+    {
+        echo "Erro ao preparar a consulta.";
+        return null; 
     }
 
-    $conn->close();
-
-    return $atendimentos;
 }
 ?>

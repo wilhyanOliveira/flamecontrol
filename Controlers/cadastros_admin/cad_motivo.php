@@ -7,12 +7,12 @@ $mensagem = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     
-    $descricao = $_POST['descricao'];
+    $descricao = $_POST['DESCRICAO'];
     $ativo = isset($_POST['ativo']) ? 1 : 0;
 
         $conn = $conexao;
         
-        $verifica_existente = "SELECT COUNT(*) AS total FROM T_MOTIVO_ATEND WHERE descricao = '$descricao'";
+        $verifica_existente = "SELECT COUNT(*) AS total FROM T_MOTIVO_ATEND WHERE DESCRICAO = '$descricao'";
         $consulta_motivo = mysqli_query($conn, $verifica_existente);
         $row = mysqli_fetch_assoc($consulta_motivo);
 
@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         else 
         {
         
-            $sql = "INSERT INTO T_MOTIVO_ATEND (DESCRICAO, ATIVO, ) 
-                VALUES ('$descricao''$ativo')";
+            $sql = "INSERT INTO T_MOTIVO_ATEND (DESCRICAO, ATIVO ) 
+                VALUES ('$descricao','$ativo')";
         }
         if (mysqli_query($conn, $sql)) 
         {

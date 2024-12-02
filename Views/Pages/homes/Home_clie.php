@@ -40,11 +40,18 @@ $dados_cliente = buscar_dados_cliente($conexao);
         <aside class="menu-lateral">
         <div>
             <div class="button_new">
-                <a href="/../flamecontrol/Views/Pages/atendimento/atendimento.php?cliente_id=<?php echo $_SESSION['cliente_id']; ?>">
-            <button class="btn" id="new_atendimento"><b> Novo Atendimento</b></button>
-        </a>
-    </div>
-</div>
+                <div class= "button_atendimentos">
+                    <a href="/../flamecontrol/Views/Pages/atendimento/atendimento.php?cliente_id=<?php echo $_SESSION['cliente_id']; ?>">
+                         <button class="btn" id="atendimentos"><b> Atendimentos</b></button>
+                     </a>
+                </div>
+
+                <div class="button_funci_clie">
+                    <button class="btn" id="new_funci_clie"><b> Funcionário</b></button>
+                </div>
+            </div>
+        </div>
+        
         </aside>
     </div>
 

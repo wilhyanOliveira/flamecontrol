@@ -14,8 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/admin_cad/backgroud_cad_admin.css">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/cad_motivo.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/buttons/button_cadastro.css">
-    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/buttons/buttons_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/style_popup/popups_menores.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_cadastro.css">
     <script src="/../flamecontrol/Views/JS/popup.js" defer></script>
     <title>Motivos de Atendimento</title>
 </head>
@@ -86,23 +87,23 @@
     <dialog>
             <div class="container_cadastro">
 
-                <h1>CADASTRO DE MOTIVOS DE ATENDIMENTO</h1>
+                <h1>MOTIVOS DE ATENDIMENTO</h1>
 
-                <form action="novo_motivo" method="post">
+                <form action="/flamecontrol/Controlers/cadastros_admin/cad_motivo.php" method="post">
 
                 <div class="novo_motivo">
                     <div class="descri_motivo">
                         <label for="descricao">Descricao</label>
-                        <input type="text" placeholder="Descrição" id="descricao">
+                        <input type="text" placeholder="Descrição" id="descricao" name="DESCRICAO">
                     </div>
                     <div class="status_motivo">
                         <label for="status_motivo">Ativo</label>
-                        <input type="checkbox" id ="status_motivo">
+                        <input type="checkbox" id ="status_motivo" name="ativo">
                     </div>
                 </div>
                     <div class ="buttons_motivo">
-                        <button class ="cancelar" id="cancela_motivo"> CANCELAR</button>
-                        <button class ="salvar" id="salvar_motivo"> SALVAR</button>
+                        <button class ="cancelar" id="cancela_motivo" name="calcela_motivo"> CANCELAR</button>
+                        <button class ="salvar" id="salvar_motivo" name = "salvar_motivo" type="submit"> SALVAR</button>
                     </div>
             </div>
             </form>

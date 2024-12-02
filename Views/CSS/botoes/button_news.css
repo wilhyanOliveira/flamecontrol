@@ -3,15 +3,18 @@
     align-items: center;
     display: flex;
     border: none;
+    flex-direction: column; 
 }
 .btn
 {
     background-color: #357ABD;
     margin: 5px;
     color: #fff;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    width: 200px;
 }
+
+
