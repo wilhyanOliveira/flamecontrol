@@ -16,17 +16,17 @@ function buscaAtendimentos($conexao)
     }
 
     $sql = "SELECT 
-                a.ID,
-                a.DT_HR_CAD,
-                a.SOLICITACAO_CLIE,
-                a.DESCRICAO,
-                ta.DESCRICAO,
-                sa.DESCRICAO,
-                da.DESCRICAO,
-                ma.DESCRICAO,
-                fc.DESCRICAO,
-                f.NOME,
-                c.ID
+            a.ID AS atendimento_id,
+            a.DT_HR_CAD AS data_cadastro,
+            a.SOLICITACAO_CLIE AS solicitacao_cliente,
+            a.DESCRICAO AS descricao_atendimento,
+            ta.DESCRICAO AS tipo_atendimento,
+            sa.DESCRICAO AS status_atendimento,
+            da.DESCRICAO AS dificuldade_atendimento,
+            ma.DESCRICAO AS motivo_atendimento,
+            fc.DESCRICAO AS funcionario_cliente,
+            f.NOME AS nome_funcionario,
+            c.ID AS cliente_id
 
             FROM T_ATENDIMENTO a
             inner join T_TIPO_ATENDIMENTO ta

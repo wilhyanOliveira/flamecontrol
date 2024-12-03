@@ -1,0 +1,25 @@
+/* Alinhar os campos no lado do outro dentro do details */
+section.atendimento details {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Permite que os itens que não cabem na linha se movam para a linha seguinte */
+    gap: 20px !important; /* Adiciona um espaçamento entre os itens */
+}
+
+.info-item {
+    display: flex !important;
+    flex-direction: column !important; /* Garante que os dados sejam exibidos verticalmente dentro de cada item */
+    flex: 1 1 30% !important; /* Isso distribui os itens igualmente no espaço disponível (ajuste conforme necessário) */
+}
+
+/* Estilo para garantir que o título de cada campo tenha um estilo adequado */
+.info-item strong {
+    font-weight: bold !important;
+    margin-bottom: 5px !important; /* Dá um pequeno espaçamento entre o título e o conteúdo */
+}
+
+/* Adicional: Para ajustar o conteúdo quando o espaço for pequeno */
+@media (max-width: 768px) {
+    section.atendimento details {
+        flex-direction: column !important; /* Em telas menores, os itens ficam empilhados verticalmente */
+    }
+}

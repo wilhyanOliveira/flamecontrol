@@ -18,9 +18,13 @@ $dados_cliente = buscar_dados_cliente($conexao);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/home/home_clie.css">
-    <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_news.css">
-    <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_cadastro.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_news.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/botoes/button_cadastro.css">
     <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_pesquisa.css">
+    <link rel="stylesheet" href="/../flamecontrol/Views/CSS/style_popup/popups_menores.css">
+    <link rel="stylesheet" href="/flamecontrol/Views/CSS/atendimento/lista_Atendimento.css">
+    <script src="/../flamecontrol/Views/JS/popup.js" defer></script>
+
     <title>CLIENTE</title>
 </head>
 <body> 
@@ -76,5 +80,32 @@ $dados_cliente = buscar_dados_cliente($conexao);
     }
     ?>
 </main>
+
+        <dialog>
+            <div class="container_cadastro">
+
+                <h1>FUNCIONARIOS</h1>
+
+                <form action="/flamecontrol/Controlers/cad_atendimentos/cad_funci_clie.php" method="post">
+
+                <div class="novo_funci_clie">
+                    <div class="nome_funci_clie">
+                        <label for="descricao">Descricao</label>
+                        <input type="text" placeholder="Descrição" id="descricao" name="DESCRICAO">
+                    </div>
+                    <div class="status_funci_clie">
+                        <label for="status_funci_clie">Ativo</label>
+                        <input type="checkbox" id ="status_funci_clie" name="ativo">
+                    </div>
+                </div>
+                    <div class ="buttons_funci_clie">
+                        <button class ="cancelar" id="cancela_funci_clie" name="cancela_funci_clie"> CANCELAR</button>
+                        <button class ="salvar" id="salvar_funci_clie" name = "salvar_funci_clie" type="submit"> SALVAR</button>
+                    </div>
+            </div>
+            </form>
+            </div>
+
+        </dialog>
 </body>
 </html>

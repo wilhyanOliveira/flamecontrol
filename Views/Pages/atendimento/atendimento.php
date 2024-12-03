@@ -48,7 +48,8 @@ $lista_tipo_atend = lista_tipo_atend($conexao);
     <link rel="stylesheet" href="/../flamecontrol/Views/CSS/Forms/Cad_atendimento.css">
     <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_news.css">
     <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_cadastro.css">
-    <link rel="stylesheet" href="/flamecontrol/Views/CSS/botoes/button_pesquisa.css">
+    <link rel="stylesheet" href="/Views/CSS/atendimento/lista_Atendimento.css">
+
     <script src="/../flamecontrol/Views/JS/popup.js" defer></script>
     <title>Atendimento</title>
 </head>
@@ -82,64 +83,58 @@ $lista_tipo_atend = lista_tipo_atend($conexao);
         <h2>Lista de Atendimentos</h2>
 
         <section id="atendimentos" class="section">
-            <?php foreach ($lista_atendimentos as $atendimentos): ?>
+        <?php foreach ($lista_atendimentos as $atendimentos): ?>
 
-        <section id="atendimento-<?php echo $atendimentos['id']; ?>" class="atendimento">
-            
-            <details>
-            <summary>
+            <section id="atendimento-<?php echo $atendimentos['atendimento_id']; ?>" class="atendimento">
+    <details>
+    <summary>
                     <div class="atendimento-info">
-                        <!-- Campo: a.ID -->
-                        <div class="info-item">
-                            <strong>ID:</strong> <?php echo $atendimento['a.ID']; ?>
+                        <div class="atend_id">
+                            <strong></strong> <?php echo $atendimentos['atendimento_id']; ?>
                         </div>
-                        <!-- Campo: a.DT_HR_CAD -->
-                        <div class="info-item">
-                            <strong>Data Cadastro:</strong> <?php echo $atendimento['a.DT_HR_CAD']; ?>
+                        <div class="atend_data">
+                            <strong></strong> <?php echo $atendimentos['data_cadastro']; ?>
                         </div>
-                        <!-- Campo: a.SOLICITAÇÃO_CLIE -->
-                        <div class="info-item">
-                            <strong>Solicitação:</strong> <?php echo $atendimento['a.SOLICITAÇÃO_CLIE']; ?>
+                        <div class="atend_tipo">
+                            <strong></strong> <?php echo $atendimentos['tipo_atendimento']; ?>
                         </div>
-                        <!-- Campo: a.DESCRICAO -->
-                        <div class="info-item">
-                            <strong>Descrição:</strong> <?php echo $atendimento['a.DESCRICAO']; ?>
+                        <div class="atend_status">
+                            <strong></strong> <?php echo $atendimentos['status_atendimento']; ?>
                         </div>
-                        <!-- Campo: ta.DESCRICAO -->
-                        <div class="info-item">
-                            <strong>Tipo Atendimento:</strong> <?php echo $atendimento['ta.DESCRICAO']; ?>
+                        <div class="atend_ficicul">
+                            <strong></strong> <?php echo $atendimentos['dificuldade_atendimento']; ?>
                         </div>
-                        <!-- Campo: sa.DESCRICAO -->
-                        <div class="info-item">
-                            <strong>Status Atendimento:</strong> <?php echo $atendimento['sa.DESCRICAO']; ?>
+                        <div class="atend_funci_clie">
+                            <strong></strong> <?php echo $atendimentos['funcionario_cliente']; ?>
                         </div>
-                        <!-- Campo: da.DESCRICAO -->
-                        <div class="info-item">
-                            <strong>Dificuldade Atendimento:</strong> <?php echo $atendimento['da.DESCRICAO']; ?>
+                        <div class="atend_atendente">
+                            <strong></strong> <?php echo $atendimentos['nome_funcionario']; ?>
                         </div>
-                        <!-- Campo: ma.DESCRICAO -->
-                        <div class="info-item">
-                            <strong>Motivo Atendimento:</strong> <?php echo $atendimento['ma.DESCRICAO']; ?>
-                        </div>
-                        <!-- Campo: fc.DESCRICAO -->
-                        <div class="info-item">
-                            <strong>Funcionário Cliente:</strong> <?php echo $atendimento['fc.DESCRICAO']; ?>
-                        </div>
-                        <!-- Campo: f.NOME -->
-                        <div class="info-item">
-                            <strong>Funcionário:</strong> <?php echo $atendimento['f.NOME']; ?>
-                        </div>
-                        <!-- Campo: c.ID -->
-                        <div class="info-item">
-                            <strong>ID Cliente:</strong> <?php echo $atendimento['c.ID']; ?>
+
+                        <!-- atendo motivo fica na linha abaixo -->
+                        <div class="atend_motivo">
+                            <strong></strong> <?php echo $atendimentos['motivo_atendimento']; ?>
                         </div>
                     </div>
                 </summary>
-            
-            </details>
+            <div class ="dados_atendimento">
 
-        </section>
-    <?php endforeach; ?>
+            <div class="solicitacao-atend">
+                <strong>Solicitação:</strong> <?php echo $atendimentos['solicitacao_cliente']; ?>
+            </div>
+            
+            <div class="descri-item">
+                <strong>Descrição:</strong> <?php echo $atendimentos['descricao_atendimento']; ?>
+            </div>
+
+            </div>
+            
+    </details>
+</section>
+
+
+<?php endforeach; ?>
+
 </section>
 
         </div>
